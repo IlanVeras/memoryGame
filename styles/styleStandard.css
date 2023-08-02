@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+
+body{
+    background-color: rgb(185, 185, 185);
+    font-family: 'Share Tech Mono', monospace, sans-serif;
+}
+
+
+main{
+   display: grid;
+   grid-template-rows: auto auto auto auto auto;
+   grid-template-columns: auto auto auto auto;
+   grid-gap: 10px;
+   position: absolute;
+   top: 30%;
+   left: 50%;
+   transform: translate(-50%, -30%);
+} 
+
+.card{
+    width: 100px;
+    height: 100px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform .5s;
+}
+
+.card_front, .card_back{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    /* position: absolute; Tirar o position absolute de card_front */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.45);
+    backface-visibility: hidden;
+}
+
+.flip{
+    transform: rotateY(180deg);
+}
+
+.card_front{
+    /* position: absolute; */
+    background-color: #101c2c;
+    transform: rotateY(180deg);
+}
+
+.card_back{
+    background-color: #05c3ff;
+    top: 0;
+    color: #101c2c;
+    font-size: 30px;
+
+}
+
+.card_back:hover{
+    transition: background-color, color;
+    transition-duration: 170ms;
+    transition-timing-function: ease-in;
+    background-color: #0086d3;
+    color: white;
+}
+
+#containerReset{
+    position: absolute;
+    /* background-color: red; */
+    top: 420px;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+ 
+#btn{
+    font-family: 'Share Tech Mono', monospace, sans-serif;
+    font-size: large;
+    background-color: #101c2c;
+    color: white;
+    padding: 1rem;
+    border-radius: 0 10px 0 10px;
+    border: none;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.45);
+}
+
+#btn:hover{
+    transition: border, color;
+    transition-duration: 50ms;
+    transition-timing-function: ease;
+    color: greenyellow;
+    border: 2px solid white;
+}
